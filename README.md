@@ -29,6 +29,14 @@ all 8 time steps both runs.
 - Real hardware jobs with 3 mitigation levels via Qiskit Runtime EstimatorV2
 - FakeKyiv vs real hardware noise comparison
 
+- ## Key Findings
+
+- FakeKyiv overestimates real hardware noise by ~6x at deep circuits — 
+  predicted 51% error at t=1.6, actual ibm_fez had 8.4%
+- ZNE effective only at circuit depth < 40 gates, breaks down beyond that
+- Readout bias on ibm_fez causes systematic positive drift — fully corrected by TREX
+- Layered mitigation always outperforms any single technique alone
+
 ---
 
 ## Setup
